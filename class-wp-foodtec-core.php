@@ -187,32 +187,13 @@ class WP_FoodTec_Core {
 	private function register_shortcodes() {
 		$shortcodes = array(
 			'Register_Form',
-			'Signup_Form',
-			'Subscribe_Form',
-			'Gift_Card_Balance_Form',
-			'Order_Tracker',
-			'Button',
-			'Order_Button',
-			'Login_Button',
-			'Login_Form',
-			'Reset_Password_Form',
-			'Subscription_Matrix',
-			'Account',
-			'Rewards',
-			'Rewards_Block',
-			'Order_Details',
-			'Order_History',
-			'Favorite_Order',
-			'Tremendous',
-			'Map',
-			'Store_List',
-			'Carousel'
+			
 		);
 
 		$registered_shortcodes = array();
 
 		foreach ( $shortcodes as $shortcode ) {
-			$shortcode_class                     = '\WP_FoodTec_Core\Includes\Shortcodes\\' . $shortcode;
+			$shortcode_class                     = '\Includes\Shortcodes\\' . $shortcode;
 			$registered_shortcodes[ $shortcode ] = new $shortcode_class();
 		}
 	}
@@ -224,21 +205,15 @@ class WP_FoodTec_Core {
 	 */
 	private function register_widgets() {
 		$widgets = array(
-			'Subscribe_Form',
-			'SMS_Form',
-			'Order_Tracker',
 			'Register_Form',
-			'Gift_Card_Balance_Form',
-			'Login_Form',
-			'Powered_By',
-			'Page'
+			
 		);
 
 		foreach ( $widgets as $class_name ) {
 			add_action(
 				'widgets_init',
 				function () use ( $class_name ) {
-					return register_widget( '\WP_FoodTec_Core\Includes\Widgets\\' . $class_name );
+					return register_widget( '\Includes\Widgets\\' . $class_name );
 				}
 			);
 		}
