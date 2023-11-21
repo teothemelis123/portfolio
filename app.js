@@ -1,26 +1,5 @@
-import CardBalance from './forms/card-balance';
-import Contact from './forms/contact';
-import Careers from './forms/careers';
-import Catering from './forms/catering';
-import ForgotPassword from './forms/forgot-password';
-import Subscribe from './forms/subscribe';
-import SMS from './forms/sms';
-import Login from './forms/login';
-import ResetPassword from './forms/reset-password';
-import OrderTracker from './forms/order-tracker';
-import Preorder from './modals/preorder';
-import StoresMap from './maps/stores-map';
-import EmbeddedOrdering from './modals/embedded-ordering';
-import StoreSelect from './forms/store-select';
 import Register from './forms/register';
-import Signup from './forms/signup';
-import FavoriteOrder from './forms/favorite-order';
-import DeleteAccount from './forms/delete-account';
-import UpdateProfile from './forms/update-profile';
-import DeleteAddress from './forms/delete-address';
-import UpdateAddress from './forms/update-address';
-import LoyaltyPreferences from './forms/loyalty-preferences';
-import Tremendous from './forms/tremendous';
+
 
 if (!Object.entries) {
   Object.entries = (obj) => {
@@ -36,14 +15,7 @@ if (!Object.entries) {
 }
 
 jQuery(document).ready(($) => {
-   if (foodtecOptions.preorder === 'on') {
-    Preorder.init();
-  }
 
-  $('.url-tabs li:not(".logout") a').click(function tabClicked(e) {
-    e.preventDefault();
-    $(this).tab('show');
-  });
 
   $('.fts-loading').fadeOut();
 
@@ -68,39 +40,10 @@ jQuery(document).ready(($) => {
       blocks: [4, 4, 4]
     })
   });
-  Tremendous.init();
-  CardBalance.init();
-  Careers.init();
-  Contact.init();
-  Catering.init();
+  
   Register.init();
-  Signup.init();
-  ForgotPassword.init();
-  Subscribe.init();
-  SMS.init();
-  Login.init();
-  ResetPassword.init();
-  OrderTracker.init();
-  StoreSelect.init();
-  FavoriteOrder.init();
-  DeleteAccount.init();
-  UpdateProfile.init();
-  LoyaltyPreferences.init();
-  DeleteAddress.init();
-  UpdateAddress.init();
+  
 
-
-  if (typeof (stores) !== 'undefined') {
-    StoresMap.init();
-  }
-
-  if (foodtecOptions.preorder === 'on') {
-    Preorder.init();
-  }
-
-  if (foodtecOptions.embeddedOrdering === 'on') {
-    EmbeddedOrdering.init();
-  }
 
   $('.url-tabs li:not(".logout") a').click(function tabClicked(e) {
     e.preventDefault();
